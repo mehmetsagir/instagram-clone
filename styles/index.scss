@@ -1,0 +1,11 @@
+@import '_reset.scss';
+
+input,
+button {
+  border: none;
+  background: none;
+  outline: none;
+}
+button {
+  cursor: pointer;
+}
