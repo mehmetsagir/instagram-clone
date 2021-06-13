@@ -16,7 +16,28 @@
   }
 }
 
+.Transparent {
+  background: none;
+  color: black;
+  border: 1px solid #ddd;
+}
+
+.Inline {
+  display: inline-block;
+  width: max-content;
+}
+
 .Disabled {
   background-color: rgba(0,149,246,.3);
   pointer-events: none;
+}
+
+.Follow {
+  display: inline-block;
+}
+
+.Unfollow {
+  display: inline-block;
+  background: none;
+  border: 1px solid #ccc;
 }

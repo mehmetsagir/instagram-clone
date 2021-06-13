@@ -1,0 +1,181 @@
+.Wrapper {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+}
+
+.Navbar {
+  ul {
+    display: flex;
+    gap: 40px;
+  }
+}
+
+.Actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  button {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 8px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.Relative {
+  position: relative;
+}
+
+.NotificationModal {
+  width: 500px;
+  position: absolute;
+  background-color: #fff;
+  right: -50px;
+  top: 40px;
+  padding: 8px 0;
+  border-radius: 6px;
+  max-height: 500px;
+  overflow-y: auto;
+  box-shadow: 0 0 5px 1px rgb(0 0 0 / 10%);
+  animation: openModal 500ms forwards;
+}
+
+.NotificationItem {
+  width: 100%;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 15px;
+  font-size: 14px;
+
+  & > a {
+    margin-left: auto;
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 4px;
+    }
+  }
+
+  div {
+    p {
+      display: inline-block;
+      margin: 0 5px;
+    }
+    a {
+      font-weight: 500;
+    }
+    span {
+      color: #ccc;
+    }
+  }
+  
+  button {
+    margin-left: auto;
+    font-weight: 500;
+  }
+}
+
+.SearchModal {
+  width: 400px;
+  position: absolute;
+  background-color: #fff;
+  left: -200px;
+  top: 40px;
+  border-radius: 6px;
+  box-shadow: 0 0 5px 1px rgb(0 0 0 / 10%);
+  animation: openModal 500ms forwards;
+  overflow: hidden;
+
+  input {
+    width: 100%;
+    height: 50px;
+    padding: 0 10px;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(#ddd, .5)
+  }
+
+  & > div {
+    max-height: 450px;
+    overflow-y: auto;
+  }
+}
+
+.SearchBoxItem {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 15px;
+
+  & > a {
+    display: block;
+    width: 100%;
+    div {
+      b {
+        font-weight: 500;
+        display: block;
+      }
+      span {
+        color: rgba(black, 0.7);
+      }
+    }
+  }
+
+  &:hover {
+    background: rgba(#ddd, .3);
+  }
+}
+
+.UserModal {
+  position: absolute;
+  width: 200px;
+  background-color: #fff;
+  right: -20px;
+  top: 50px;
+  border-radius: 6px;
+  box-shadow: 0 0 5px 1px rgb(0 0 0 / 10%);
+  animation: openModal 500ms forwards;
+
+  li a {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding: 0 15px;
+    svg {
+      margin-right: 5px;
+      margin-top: 2px;
+    }
+    &:hover {
+      background: rgba(#ddd, .5);
+    }
+  }
+  li:last-child a {
+    border-top: 1px solid rgba(#ddd, .5);
+  }
+}
+
+@keyframes openModal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

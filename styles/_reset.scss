@@ -20,6 +20,11 @@ ul {
   list-style: none;
 }
 
+img {
+  object-fit: cover;
+  object-position: center;
+}
+
 .img-box {
   position: relative;
 }
