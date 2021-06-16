@@ -1,0 +1,9 @@
+.Container {
+  display: flex;
+}
+
+@media (max-width: 1000px) {
+  .Container {
+    justify-content: center;
+  }
+}

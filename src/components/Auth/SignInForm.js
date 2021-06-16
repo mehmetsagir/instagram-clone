@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 import Button from '@components/Button'
-import styles from '@modules/components/Auth/Form.module.scss'
+import styles from '@modules/Auth/Form.module.scss'
 
 const SignInForm = () => {
   const [username, setUsername] = useState('')

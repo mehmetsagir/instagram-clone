@@ -1,9 +1,19 @@
-import Layout from "src/components/Layout";
+import Layout from "@components/Layout";
+import Post from '@components/Post.js'
+
+import styles from '@modules/Home/Home.module.scss'
+import RightBar from "@components/Home/RightBar";
 
 export default function Home() {
   return (
-    <div>
-      <Layout></Layout>
-    </div>
+    <Layout>
+      <div className={`${styles.Container} relative`}>
+        <div>
+          <Post />
+          <Post />
+        </div>
+        <RightBar />
+      </div>
+    </Layout>
   )
 }

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import Button from '../Button'
 
-import styles from '@modules/components/Auth/Form.module.scss'
+import styles from '@modules/Auth/Form.module.scss'
 
 const SignUpForm = () => {
   const [email, setEmail] = useState('')

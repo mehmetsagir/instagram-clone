@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 
-import styles from '@modules/components/Auth/Form.module.scss'
+import styles from '@modules/Auth/Form.module.scss'
 
 const FormFooter = ({label, link, linkTitle}) => {
   return (

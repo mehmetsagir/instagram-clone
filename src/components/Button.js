@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '@modules/components/Button.module.scss'
+import styles from '@modules/Button.module.scss'
 
 const Button = ({background = true, disabled, block = true, loading = false, children}) => {
   return (

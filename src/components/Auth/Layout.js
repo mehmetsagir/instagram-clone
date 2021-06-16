@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '@modules/components/Auth/Layout.module.scss'
+import styles from '@modules/Auth/Layout.module.scss'
 
 import Footer from './Footer'
 

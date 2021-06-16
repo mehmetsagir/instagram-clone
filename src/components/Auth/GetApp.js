@@ -1,6 +1,6 @@
 import React from 'react'
 
-import styles from '@modules/components/Auth/GetApp.module.scss'
+import styles from '@modules/Auth/GetApp.module.scss'
 
 const GetApp = () => {
   return (

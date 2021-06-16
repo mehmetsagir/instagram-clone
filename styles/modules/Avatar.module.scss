@@ -1,0 +1,16 @@
+.Avatar {
+  margin: 0;
+  padding: 2px;
+  border-radius: 50%;
+  max-width: max-content;
+  max-height: max-content;
+  display: flex;
+  img {
+    border-radius: 50%;
+    border: 1px solid white;
+  }
+}
+
+.Border {
+  background: linear-gradient(219deg, rgba(184, 63, 140, 1) 0%, rgba(237, 158, 90, 1) 100%);
+}

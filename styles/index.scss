@@ -1,4 +1,5 @@
 @import '_reset.scss';
+@import '_common.scss';
 
 input,
 button {
@@ -8,4 +9,7 @@ button {
 }
 button {
   cursor: pointer;
+}
+.mt-60 {
+  margin-top: 60px;
 }

@@ -1,0 +1,17 @@
+.relative {
+  position: relative;
+}
+
+.container {
+  width: 975px;
+  max-width: 975px;
+  min-height: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1000px) {
+  .container {
+    width: 100%
+  }
+}

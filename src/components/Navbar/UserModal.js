@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import Link from 'next/link'
 
-import styles from '@modules/components/Navbar.module.scss'
+import styles from '@modules/Navbar.module.scss'
 import outSide from 'src/helpers/outSide'
 
 const UserModal = ({setUserModal}) => {

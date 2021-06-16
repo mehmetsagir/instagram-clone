@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import styles from '@modules/components/Navbar.module.scss'
+import styles from '@modules/Navbar.module.scss'
 
 import NotificationModalItem from '@components/Navbar/NotificationModalItem'
 
