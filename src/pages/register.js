@@ -6,7 +6,7 @@ import GetApp from '@components/Auth/GetApp'
 import FormFooter from '@components/Auth/FormFooter'
 import SignUpForm from '@components/Auth/SignUpForm'
 
-import styles from '@modules/components/Auth/Common.module.scss'
+import styles from '@modules/Auth/Common.module.scss'
 
 const register = () => (
   <>

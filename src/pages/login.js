@@ -7,7 +7,7 @@ import SignInForm from '@components/Auth/SignInForm'
 import FormFooter from '@components/Auth/FormFooter'
 import GetApp from '@components/Auth/GetApp'
 
-import styles from '@modules/components/Auth/Common.module.scss'
+import styles from '@modules/Auth/Common.module.scss'
 
 const login = () => {
 
