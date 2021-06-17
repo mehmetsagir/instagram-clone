@@ -5,6 +5,15 @@
   max-width: max-content;
   max-height: max-content;
   display: flex;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
   img {
     border-radius: 50%;
     border: 1px solid white;
