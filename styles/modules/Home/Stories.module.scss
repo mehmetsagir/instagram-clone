@@ -11,6 +11,7 @@
     display: flex;
     gap: 15px;
     overflow-x: scroll;
+    cursor: grab;
 
     &::-webkit-scrollbar {
       display: none;
