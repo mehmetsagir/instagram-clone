@@ -1,0 +1,75 @@
+.Container {
+  height: 87vh;
+  border: 1px solid #d8d8d8;
+  display: flex;
+}
+
+.MessageList {
+  width: 350px;
+  height: 100%;
+  border-right: 1px solid #d8d8d8;
+}
+
+.MessageListHeader {
+  border-bottom: 1px solid #d8d8d8;
+  position: relative;
+  text-align: center;
+
+  a {
+    line-height: 60px;
+    font-weight: 600;
+  }
+  svg {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+} 
+
+.MessageListContent {
+  padding: 20px;
+  li:not(:first-child) {
+    margin-top: 7px;
+  }
+}
+
+.MessageContainer {
+  flex: 1;
+  height: 100%;
+}
+
+.noMessage {  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  div {
+    border: 2px solid #000;
+    border-radius: 50%;
+    // height: 90px;
+    // width: 90px;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    padding: 10px 20px;
+    svg {
+      margin-top: 14px;
+    }
+  }
+  p {
+    margin-top: 10px;
+    font-size: 22px;
+    font-weight: 300;
+    color: #262626;
+  }
+  span {
+    margin-top: 4px;
+    color: #8e8e8e;
+    font-size: 14px;
+  }
+  button {
+    margin-top: 20px;
+    font-weight: 500;
+  }
+}
