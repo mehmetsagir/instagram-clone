@@ -81,7 +81,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="relative">
-            <Link href="#">
+            <Link href="">
               <a onClick={() => setNotification(!notification)}>
                 {
                   notification ? (

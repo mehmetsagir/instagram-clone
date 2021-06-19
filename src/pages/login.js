@@ -37,7 +37,7 @@ const login = () => {
                 <img src="/images/icons/facebook-icon.svg" width="16px" />
                 <span>Log in with Facebook</span>
               </button>
-              <Link href="#">
+              <Link href="">
                 <a className={styles.ForgetPassword}>Forgot Pasword?</a>
               </Link>
             </div>

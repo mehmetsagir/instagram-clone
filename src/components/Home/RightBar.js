@@ -11,7 +11,7 @@ const RightBar = () => {
         <div>
           <Avatar />
           <div>
-            <Link href="#">
+            <Link href="">
               <a>
                 mehmetsagirc
               </a>
@@ -26,14 +26,14 @@ const RightBar = () => {
       
       <div className={styles.Title}>
         <span>Suggestions For You</span>
-        <Link href="#"><a>See All</a></Link>
+        <Link href=""><a>See All</a></Link>
       </div>
 
       <div className={styles.UserList}>
         <div>
           <Avatar size="sm" />
           <div>
-            <Link href="#"><a>username</a></Link>
+            <Link href=""><a>username</a></Link>
             <span>New to Instagram</span>
           </div>
           <button>
@@ -43,7 +43,7 @@ const RightBar = () => {
         <div>
           <Avatar size="sm" />
           <div>
-            <Link href="#"><a>username</a></Link>
+            <Link href=""><a>username</a></Link>
             <span>New to Instagram</span>
           </div>
           <button>
@@ -53,7 +53,7 @@ const RightBar = () => {
         <div>
           <Avatar size="sm" />
           <div>
-            <Link href="#"><a>username</a></Link>
+            <Link href=""><a>username</a></Link>
             <span>New to Instagram</span>
           </div>
           <button>
@@ -63,7 +63,7 @@ const RightBar = () => {
         <div>
           <Avatar size="sm" />
           <div>
-            <Link href="#"><a>username</a></Link>
+            <Link href=""><a>username</a></Link>
             <span>New to Instagram</span>
           </div>
           <button>
@@ -73,7 +73,7 @@ const RightBar = () => {
         <div>
           <Avatar size="sm" />
           <div>
-            <Link href="#"><a>username</a></Link>
+            <Link href=""><a>username</a></Link>
             <span>New to Instagram</span>
           </div>
           <button>

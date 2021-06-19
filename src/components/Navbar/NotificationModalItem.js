@@ -11,7 +11,7 @@ const NotificationModalItem = ({ type }) => {
       <div className={styles.NotificationItem}>
         <Avatar />
         <div>
-          <Link href="#">
+          <Link href="">
             <a>mehmetsagirdev</a>
           </Link> 
           {
@@ -26,7 +26,7 @@ const NotificationModalItem = ({ type }) => {
         {
           type === 'like' ? (
            <>
-              <Link href="#">
+              <Link href="">
                 <a>
                   <img src="https://i.internethaber.com/storage/files/images/2019/05/08/avatar-2-3-ve-4un-vizyon-tarihle-lna9_cover.jpg" alt="" />
                 </a>
