@@ -14,7 +14,7 @@ const Post = () => {
       <div className={styles.PostHeader}>
         <div>
           <Avatar size="sm" />
-          <Link href="">
+          <Link href="#">
             <a>
               username
             </a>
@@ -60,18 +60,18 @@ const Post = () => {
       
       <div className={styles.PostLikes}>
         <Avatar size="x-sm" />
-        <Link href="">
+        <Link href="#">
           <a> mehmetsagirdev </a>
         </Link>
         and <button> 145 likes</button>
       </div>
       
       <div className={styles.Description}>
-        <Link href=""><a>username</a></Link> <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, quasi?</span>
+        <Link href="#"><a>username</a></Link> <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, quasi?</span>
       </div>
 
       <div className={styles.Comments}>
-        {/* <div><Link href=""><a>username</a></Link> <span>Lorem ipsum dolor sit amet.</span></div> */}
+        {/* <div><Link href="#"><a>username</a></Link> <span>Lorem ipsum dolor sit amet.</span></div> */}
       </div>
 
       <div className={styles.CreatedDate}>
