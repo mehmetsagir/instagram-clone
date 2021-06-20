@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 
+import Modal from '@components/Modal'
 import Avatar from '@components/Avatar'
 import styles from '@modules/Post.module.scss'
 
 const Post = () => {
-
+  const [isShowModal, setShowModal] = useState(false)
   const [liked, setLike] = useState(false)
   const [saved, setSave] = useState(false)
 
@@ -63,7 +64,7 @@ const Post = () => {
         <Link href="#">
           <a> mehmetsagirdev </a>
         </Link>
-        and <button> 145 likes</button>
+        and <button onClick={() => setShowModal(true)}> 145 likes</button>
       </div>
       
       <div className={styles.Description}>
@@ -82,6 +83,11 @@ const Post = () => {
         <input type="text" placeholder="Add comment..." />
         <button>Share</button>
       </div>
+      {
+        isShowModal && (
+          <Modal type="likes" isHide={setShowModal} />
+        )
+      }
     </div>
   )
 }
