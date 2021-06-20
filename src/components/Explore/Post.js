@@ -5,7 +5,7 @@ import styles from '@modules/Explore/Post.module.scss'
 
 const Post = ({post}) => {
   return (
-    <Link href="#">
+    <Link href="/post/1">
       <a className={styles.Post}>
         <img src={`https://picsum.photos/300/300?random=${post.id}`} alt="user-image" />
         <div>
