@@ -45,6 +45,9 @@
     margin-top: 15px;
     display: flex;
     gap: 25px;
+    li:not(:first-child) {
+      cursor: pointer;
+    }
     b {
       font-weight: 500;
       margin-right: 5px;  

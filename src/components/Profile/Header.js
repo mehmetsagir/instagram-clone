@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
+import Modal from '@components/Modal'
 
 import styles from '@modules/Profile/Header.module.scss'
 import { useRouter } from 'next/router'
 
 const Header = () => {
+  const [isShowFollowersModal, setShowFollowersModal] = useState(false)  
+  const [isShowFollowingModal, setShowFollowingModal] = useState(false)  
   const router = useRouter()
   return (
     <>
@@ -24,11 +27,11 @@ const Header = () => {
               <b>1</b>
               <span>post</span>
             </li>
-            <li>
+            <li onClick={() => setShowFollowersModal(true)}>
               <b>328</b>
               <span>followers</span>
             </li>
-            <li>
+            <li onClick={() => setShowFollowingModal(true)}>
               <b>288</b>
               <span>following</span>
             </li>
@@ -56,6 +59,16 @@ const Header = () => {
           </Link>
         </li>
       </ul>
+      {
+        isShowFollowersModal && (
+          <Modal isHide={setShowFollowersModal} type="followers" />
+        )
+      }
+      {
+        isShowFollowingModal && (
+          <Modal isHide={setShowFollowingModal} type="following" />
+        )
+      }
     </>
   )
 }

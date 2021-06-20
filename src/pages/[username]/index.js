@@ -1,8 +1,9 @@
 import React from 'react'
 
+import styles from '@modules/Profile/Profile.module.scss'
+
 import ProfileLayout from '@components/Profile/ProfileLayout'
 import Post from '@components/Explore/Post'
-import styles from '@modules/Profile/Profile.module.scss'
 
 const username = () => {
   const fakePostData = [
@@ -38,7 +39,6 @@ const username = () => {
           <span className={styles.Info}>Post not found!</span>
         )
       }
-
     </ProfileLayout>
   )
 }
