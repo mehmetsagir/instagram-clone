@@ -14,7 +14,7 @@ const Modal = ({ isHide, type = 'followers' }) => {
     switch(type) {
       case 'followers': return { title: 'Followers', btnText: 'Remove' }
       case 'following' : return { title: 'Following', btnText: 'Following' }
-      case 'likes' : return { title: 'Likes', btnText: '' }
+      case 'likes' : return { title: 'Likes', btnText: 'Following' }
     }
   }
 
