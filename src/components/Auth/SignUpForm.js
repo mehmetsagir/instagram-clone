@@ -1,57 +1,94 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
-import Button from '../Button'
+import Button from "@components/Button";
 
-import styles from '@modules/Auth/Form.module.scss'
+import styles from "@modules/Auth/Form.module.scss";
+import router from "next/router";
 
 const SignUpForm = () => {
-  const [email, setEmail] = useState('')
-  const [fullName, setFullName] = useState('')
-  const [userName, setUserName] = useState('')
-  const [password, setPassword] = useState('')
-  const [passwordIsHide, setPasswordIsHide] = useState(true)
-  const [loading, setLoading] = useState(false)
+  const [email, setEmail] = useState("");
+  const [fullName, setFullName] = useState("");
+  const [userName, setUserName] = useState("");
+  const [password, setPassword] = useState("");
+  const [passwordIsHide, setPasswordIsHide] = useState(true);
 
   const formControl = () => {
-    if (email.length > 0 && userName.length > 0 && password.length > 0 && fullName.length > 0) {
-      return false
+    if (
+      email.length > 0 &&
+      userName.length > 0 &&
+      password.length > 0 &&
+      fullName.length > 0
+    ) {
+      return true;
     }
-    return true
-  }
-  
-  const inputActiveClass = el => {
-    if(el.length > 0) return styles.Active
-    return ''
-  }
+    return false;
+  };
+
+  const inputActiveClass = (el) => {
+    if (el.length > 0) return styles.Active;
+    return "";
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (formControl()) {
+      router.push("/");
+    }
+  };
 
   return (
-    <form className={styles.Form}>
+    <form className={styles.Form} onSubmit={handleSubmit}>
       <label className={`${inputActiveClass(email)}`}>
-        <input className="input" value={email} onChange={(e) => setEmail(e.target.value)} type="email" />
+        <input
+          className="input"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          type="email"
+        />
         <span>Email</span>
-      </label>  
+      </label>
 
       <label className={`input-box ${inputActiveClass(fullName)}`}>
-        <input className="input" value={fullName} onChange={(e) => setFullName(e.target.value)} type="text" />
+        <input
+          className="input"
+          value={fullName}
+          onChange={(e) => setFullName(e.target.value)}
+          type="text"
+        />
         <span>Full Name</span>
-      </label>  
+      </label>
 
       <label className={`input-box ${inputActiveClass(userName)}`}>
-        <input className="input" value={userName} onChange={(e) => setUserName(e.target.value)} type="text" />
+        <input
+          className="input"
+          value={userName}
+          onChange={(e) => setUserName(e.target.value)}
+          type="text"
+        />
         <span>Username</span>
-      </label>  
+      </label>
 
       <label className={`input-box ${inputActiveClass(password)}`}>
-        <input className="input" value={password} onChange={(e) => setPassword(e.target.value)} type={passwordIsHide ? 'password' : 'text'} />
+        <input
+          className="input"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          type={passwordIsHide ? "password" : "text"}
+        />
         <span>Password</span>
-        <button className="btn" type="button" onClick={() => setPasswordIsHide(!passwordIsHide)}>{ passwordIsHide ? 'Show' : 'Hide' }</button>
-      </label>  
+        <button
+          className="btn"
+          type="button"
+          onClick={() => setPasswordIsHide(!passwordIsHide)}
+        >
+          {passwordIsHide ? "Show" : "Hide"}
+        </button>
+      </label>
 
-      <Button disabled={formControl()}
-              loading={loading} 
-      >Sign Up</Button>
-    </form>  
-  )
-}
+      <Button disabled={!formControl()}>Sign Up</Button>
+    </form>
+  );
+};
 
-export default SignUpForm
+export default SignUpForm;
