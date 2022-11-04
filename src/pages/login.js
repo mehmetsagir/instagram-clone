@@ -1,18 +1,16 @@
-import React from 'react'
-import Head from 'next/head'
-import Link from 'next/link'
+import React from "react";
+import Head from "next/head";
+import Link from "next/link";
 
-import Layout from '@components/Auth/Layout'
-import SignInForm from '@components/Auth/SignInForm'
-import FormFooter from '@components/Auth/FormFooter'
-import GetApp from '@components/Auth/GetApp'
+import Layout from "@components/Auth/Layout";
+import SignInForm from "@components/Auth/SignInForm";
+import FormFooter from "@components/Auth/FormFooter";
+import GetApp from "@components/Auth/GetApp";
 
-import styles from '@modules/Auth/Common.module.scss'
+import styles from "@modules/Auth/Common.module.scss";
 
 const login = () => {
-
-
-  return  (
+  return (
     <>
       <Head>
         <title>Login • Instagram</title>
@@ -20,7 +18,10 @@ const login = () => {
 
       <Layout>
         <div className={styles.Phone}>
-          <img src="https://www.instagram.com/static/images/homepage/screenshot1.jpg/d6bf0c928b5a.jpg" alt="image" />
+          <img
+            src="https://www.instagram.com/static/images/homepage/screenshot1.jpg/d6bf0c928b5a.jpg"
+            alt="image"
+          />
         </div>
         <div>
           <div className={styles.Container}>
@@ -31,8 +32,8 @@ const login = () => {
               <SignInForm />
               <div className={styles.Or}>
                 <hr />
-                <span>OR</span>  
-              </div> 
+                <span>OR</span>
+              </div>
               <button className={`btn ${styles.LoginWithFB}`}>
                 <img src="/images/icons/facebook-icon.svg" width="16px" />
                 <span>Log in with Facebook</span>
@@ -42,13 +43,16 @@ const login = () => {
               </Link>
             </div>
           </div>
-          <FormFooter label="Don't have an account?" link="/register" linkTitle="Sign up" />
+          <FormFooter
+            label="Don't have an account?"
+            link="/register"
+            linkTitle="Sign up"
+          />
           <GetApp />
         </div>
       </Layout>
-  
     </>
-  )
-}
+  );
+};
 
-export default login
+export default login;
