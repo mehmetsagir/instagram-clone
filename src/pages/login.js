@@ -2,7 +2,6 @@ import React from "react";
 import Head from "next/head";
 import Link from "next/link";
 
-import Layout from "@components/Auth/Layout";
 import SignInForm from "@components/Auth/SignInForm";
 import FormFooter from "@components/Auth/FormFooter";
 import GetApp from "@components/Auth/GetApp";
@@ -16,7 +15,7 @@ const login = () => {
         <title>Login • Instagram</title>
       </Head>
 
-      <Layout>
+      <>
         <div className={styles.Phone}>
           <img
             src="https://www.instagram.com/static/images/homepage/screenshot1.jpg/d6bf0c928b5a.jpg"
@@ -50,7 +49,7 @@ const login = () => {
           />
           <GetApp />
         </div>
-      </Layout>
+      </>
     </>
   );
 };
