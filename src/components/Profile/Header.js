@@ -38,7 +38,7 @@ const Header = () => {
           </ul>
           <p className={styles.FullName}>Mehmet Sağır</p>
           <p className={styles.Description}>Web Developer | Documenting my journey</p>
-          <a href="http://mehmetsagir.com">mehmetsagir.com</a>
+          <a href="http://mehmetsagir.dev">mehmetsagir.dev</a>
         </div>
       </div>
       <ul className={styles.Links}>
