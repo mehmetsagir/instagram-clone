@@ -1,6 +1,6 @@
-import Post from "@components/Explore/Post";
+import Post from "src/components/Explore/Post";
 
-import styles from "@modules/Explore/Post.module.scss";
+import styled from "styled-components";
 
 const explore = () => {
   const fakePostData = [
@@ -52,12 +52,29 @@ const explore = () => {
   ];
 
   return (
-    <div className={styles.Posts}>
+    <StyledPosts>
       {fakePostData.map((post) => (
         <Post key={post.id} post={post} />
       ))}
-    </div>
+    </StyledPosts>
   );
 };
+
+export const StyledPosts = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 40px;
+
+  .info-text {
+    display: block;
+    color: #8e8e8e;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    margin: 30px 0;
+  }
+`;
 
 export default explore;

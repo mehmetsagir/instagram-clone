@@ -1,22 +1,48 @@
-import React, { useRef } from 'react'
+import { useRef } from "react";
 
-import SearchItem from '@components/Navbar/SearchItem'
+import styled from "styled-components";
 
-import styles from '@modules/Navbar.module.scss'
-import outSide from 'src/helpers/outSide'
+import SearchItem from "src/components/Navbar/SearchItem";
 
-const SearchModal = ({setSearchModal }) => {
-  const ref = useRef()
+import useOnClickOutside from "src/hooks/useOnClickOutside";
 
-  outSide(setSearchModal, ref)
+const SearchModal = ({ setSearchModal }) => {
+  const ref = useRef();
+
+  useOnClickOutside(ref, () => setSearchModal(false));
 
   return (
-    <div className={styles.SearchModal} ref={ref}>
+    <StyledSearchModal ref={ref}>
       <SearchItem />
       <SearchItem />
       <SearchItem />
-    </div>
-  )
-}
+    </StyledSearchModal>
+  );
+};
 
-export default SearchModal
+const StyledSearchModal = styled.div`
+  width: 400px;
+  max-height: 450px;
+  position: absolute;
+  background-color: #fff;
+  left: -80px;
+  top: 40px;
+  border-radius: 6px;
+  box-shadow: 0 0 5px 1px rgb(0 0 0 / 10%);
+  z-index: 999;
+  overflow-y: auto;
+  animation: openModal 500ms forwards;
+
+  @keyframes openModal {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+`;
+
+export default SearchModal;

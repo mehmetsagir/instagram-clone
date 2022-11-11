@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const Footer = () => (
   <footer>
@@ -39,6 +39,6 @@ const Footer = () => (
       <span>© 2021 Instagram from Facebook</span>
     </div>
   </footer>
-)
+);
 
-export default Footer
+export default Footer;

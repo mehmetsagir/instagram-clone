@@ -1,18 +1,26 @@
-import Post from "@components/Post.js";
+import Post from "src/components/Post.js";
 
-import styles from "@modules/Home/Home.module.scss";
-import RightBar from "@components/Home/RightBar";
-import Stories from "@components/Home/Stories";
+import RightBar from "src/components/Home/RightBar";
+import Stories from "src/components/Home/Stories";
+import styled from "styled-components";
 
 export default function Home() {
   return (
-    <div className={`${styles.Container} relative`}>
+    <StyledHome className="relative">
       <div>
         <Stories />
         <Post />
         <Post />
       </div>
       <RightBar />
-    </div>
+    </StyledHome>
   );
 }
+
+const StyledHome = styled.div`
+  display: flex;
+
+  @media (max-width: 1000px) {
+    justify-content: center;
+  }
+`;

@@ -1,12 +1,12 @@
-import React from 'react'
-import Link from 'next/link'
+import Link from "next/link";
 
-import styles from '@modules/Navbar.module.scss'
-import Avatar from '@components/Avatar'
+import styled from "styled-components";
+
+import Avatar from "src/components/Avatar";
 
 const SearchItem = () => {
   return (
-    <div className={styles.SearchBoxItem}>
+    <StyledSearchItem>
       <Avatar size="md" />
       <Link href="/">
         <a>
@@ -15,9 +15,36 @@ const SearchItem = () => {
             <span>Mehmet Sağır</span>
           </div>
         </a>
-    </Link>
-    </div>
-  )
-}
+      </Link>
+    </StyledSearchItem>
+  );
+};
 
-export default SearchItem
+const StyledSearchItem = styled.div`
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 15px;
+
+  & > a {
+    display: block;
+    width: 100%;
+    div {
+      b {
+        font-weight: 500;
+        display: block;
+      }
+      span {
+        color: rgba(black, 0.7);
+      }
+    }
+  }
+
+  &:hover {
+    background: rgba(#ddd, 0.3);
+  }
+`;
+
+export default SearchItem;

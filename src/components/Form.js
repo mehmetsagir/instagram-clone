@@ -1,4 +1,10 @@
-.Form {
+import styled from "styled-components";
+
+const Form = ({ children, ...props }) => {
+  return <StyledFrom {...props}>{children}</StyledFrom>;
+};
+
+const StyledFrom = styled.form`
   label {
     position: relative;
     display: flex;
@@ -34,39 +40,41 @@
       line-height: 18px;
     }
   }
+
   & > button {
     margin-top: 15px;
   }
-}
 
-.Active {
-  span {
-    transform: none !important;
-    font-size: 9px !important;
-    top: 5px !important;
-  }
-  input {
-    margin-top: auto;
-    margin-bottom: 3px;
-  }
-}
-
-
-.FormFooter {
-  max-width: 350px;
-  width: 350px;
-  padding: 10px 0;
-  border: 1px solid #dbdbdb;
-  background: #fff;
-  margin-top: 10px;
-  text-align: center;
-  font-size: 14px;
-
-  p {
-    padding: 10px 0;
-    a {
-      color: #0095f6;
-      font-weight: 500;
+  .active {
+    span {
+      transform: none !important;
+      font-size: 9px !important;
+      top: 5px !important;
+    }
+    input {
+      margin-top: auto;
+      margin-bottom: 3px;
     }
   }
-}
+
+  .form-footer {
+    max-width: 350px;
+    width: 350px;
+    padding: 10px 0;
+    border: 1px solid #dbdbdb;
+    background: #fff;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+
+    p {
+      padding: 10px 0;
+      a {
+        color: #0095f6;
+        font-weight: 500;
+      }
+    }
+  }
+`;
+
+export default Form;

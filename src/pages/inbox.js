@@ -1,14 +1,14 @@
 import Link from "next/link";
 import ContentLoader from "react-content-loader";
 
-import Button from "@components/Button";
-import styles from "@modules/Inbox/Inbox.module.scss";
+import Button from "src/components/Button";
+import styled from "styled-components";
 
 const inbox = () => {
   return (
-    <div className={`${styles.Container} relative`}>
-      <div className={styles.MessageList}>
-        <div className={styles.MessageListHeader}>
+    <StyledInbox className="relative">
+      <div className="message-list">
+        <div className="message-list-header">
           <Link href="#">
             <a>mehmetsagirdev</a>
           </Link>
@@ -20,7 +20,7 @@ const inbox = () => {
             </svg>
           </button>
         </div>
-        <ul className={styles.MessageListContent}>
+        <ul className="message-list-content">
           <li>
             <ContentLoader
               speed={2}
@@ -65,7 +65,7 @@ const inbox = () => {
           </li>
         </ul>
       </div>
-      <div className={`${styles.MessageContainer} ${styles.noMessage}`}>
+      <div className="message-container no-message">
         <div>
           <svg fill="#262626" height="50" viewBox="0 0 48 48" width="50">
             <path d="M47.8 3.8c-.3-.5-.8-.8-1.3-.8h-45C.9 3.1.3 3.5.1 4S0 5.2.4 5.7l15.9 15.6 5.5 22.6c.1.6.6 1 1.2 1.1h.2c.5 0 1-.3 1.3-.7l23.2-39c.4-.4.4-1 .1-1.5zM5.2 6.1h35.5L18 18.7 5.2 6.1zm18.7 33.6l-4.4-18.4L42.4 8.6 23.9 39.7z"></path>
@@ -75,8 +75,79 @@ const inbox = () => {
         <span>Send private photos and messages to a friend or group.</span>
         <Button block={false}>Send Message</Button>
       </div>
-    </div>
+    </StyledInbox>
   );
 };
+
+const StyledInbox = styled.div`
+  height: 87vh;
+  border: 1px solid #d8d8d8;
+  display: flex;
+
+  .message-list {
+    width: 350px;
+    height: 100%;
+    border-right: 1px solid #d8d8d8;
+  }
+
+  .message-list-header {
+    border-bottom: 1px solid #d8d8d8;
+    position: relative;
+    text-align: center;
+
+    a {
+      line-height: 60px;
+      font-weight: 600;
+    }
+    svg {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  .message-list-content {
+    padding: 20px;
+    li:not(:first-child) {
+      margin-top: 7px;
+    }
+  }
+
+  .message-container {
+    flex: 1;
+    height: 100%;
+  }
+
+  .no-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    div {
+      border: 2px solid #000;
+      border-radius: 50%;
+      padding: 10px 20px;
+      svg {
+        margin-top: 14px;
+      }
+    }
+    p {
+      margin-top: 10px;
+      font-size: 22px;
+      font-weight: 300;
+      color: #262626;
+    }
+    span {
+      margin-top: 4px;
+      color: #8e8e8e;
+      font-size: 14px;
+    }
+    button {
+      margin-top: 20px;
+      font-weight: 500;
+    }
+  }
+`;
 
 export default inbox;

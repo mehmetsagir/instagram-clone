@@ -2,10 +2,6 @@
   "compilerOptions": {
     "target": "es5",
     "baseUrl": ".",
-    "paths": {
-      "@styles/*": ["/styles/*"],
-      "@components/*": ["/src/components/*"],
-      "@modules/*": ["/styles/modules/*"],
-    }
+    "paths": {}
   }
 }

@@ -1,19 +1,17 @@
-import React from "react";
-import styles from "@modules/Button.module.scss";
+import styled, { css } from "styled-components";
 
 const Button = ({
   background = true,
   disabled,
-  block = true,
+  block = false,
   loading = false,
   children,
   ...props
 }) => {
   return (
-    <button
-      className={`${styles.Button} ${!block && styles.Inline} ${
-        !background && styles.Transparent
-      } ${disabled && styles.Disabled}`}
+    <StyledButton
+      block={block}
+      transprent={!background}
       disabled={disabled}
       {...props}
     >
@@ -37,8 +35,40 @@ const Button = ({
       ) : (
         children
       )}
-    </button>
+    </StyledButton>
   );
 };
+
+const StyledButton = styled.button`
+  background: #0095f6;
+  border: none;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;
+  padding: 0 9px;
+  border-radius: 4px;
+  cursor: pointer;
+  max-width: max-content;
+
+  :disabled {
+    background-color: rgba(0, 149, 246, 0.3);
+    pointer-events: none;
+  }
+
+  ${(props) => {
+    props.transparent &&
+      css`
+        background: none;
+        color: black;
+        border: 1px solid #ddd;
+      `;
+
+    props.block &&
+      css`
+        display: block;
+      `;
+  }}
+`;
 
 export default Button;

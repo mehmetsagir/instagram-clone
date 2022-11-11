@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-import Button from "@components/Button";
+import Button from "src/components/Button";
 
-import styles from "@modules/Auth/Form.module.scss";
 import router from "next/router";
+import Form from "src/components/Form";
 
 const SignUpForm = () => {
   const [email, setEmail] = useState("");
@@ -25,7 +25,7 @@ const SignUpForm = () => {
   };
 
   const inputActiveClass = (el) => {
-    if (el.length > 0) return styles.Active;
+    if (el.length > 0) return "active";
     return "";
   };
 
@@ -38,7 +38,7 @@ const SignUpForm = () => {
   };
 
   return (
-    <form className={styles.Form} onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit}>
       <label className={`${inputActiveClass(email)}`}>
         <input
           className="input"
@@ -87,7 +87,7 @@ const SignUpForm = () => {
       </label>
 
       <Button disabled={!formControl()}>Sign Up</Button>
-    </form>
+    </Form>
   );
 };
 

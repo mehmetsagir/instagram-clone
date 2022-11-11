@@ -1,10 +1,10 @@
 import { useState } from "react";
 import Link from "next/link";
 
-import Avatar from "@components/Avatar";
-import Modal from "@components/Modal";
+import Avatar from "src/components/Avatar";
+import Modal from "src/components/Modal";
 
-import styles from "@modules/PostDetail/PostDetail.module.scss";
+import styled from "styled-components";
 
 export default function Home() {
   const [isShowModal, setShowModal] = useState(false);
@@ -13,12 +13,12 @@ export default function Home() {
 
   return (
     <>
-      <div className={styles.Container}>
-        <div className={styles.Image} onDoubleClick={() => setLike(!liked)}>
+      <StyledPostDetail>
+        <div className="image" onDoubleClick={() => setLike(!liked)}>
           <img src="https://picsum.photos/600/600" alt="" />
         </div>
-        <div className={styles.Detail}>
-          <div className={styles.Header}>
+        <div className="detail">
+          <div className="header">
             <Avatar size="sm" />
             <Link href="#">
               <a>mehmetsagirdev</a>
@@ -38,7 +38,7 @@ export default function Home() {
             </button>
           </div>
 
-          <div className={styles.Description}>
+          <div className="description">
             <Avatar size="sm" />
             <div>
               <Link href="#">
@@ -49,7 +49,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className={styles.Comments}>
+          <div className="comments">
             {/* <div>
               <Avatar size="sm" />
               <div>
@@ -59,7 +59,7 @@ export default function Home() {
             </div> */}
           </div>
 
-          <div className={styles.Actions}>
+          <div className="actions">
             <div>
               <button onClick={() => setLike(!liked)}>
                 {liked ? (
@@ -106,13 +106,151 @@ export default function Home() {
             </button>
           </div>
           <button onClick={() => setShowModal(true)}>130 likes</button>
-          <div className={styles.Comment}>
+          <div className="comment">
             <input type="text" placeholder="Add a comment" />
             <button>Post</button>
           </div>
         </div>
-      </div>
+      </StyledPostDetail>
       {isShowModal && <Modal type="likes" isHide={setShowModal} />}
     </>
   );
 }
+
+const StyledPostDetail = styled.div`
+  display: flex;
+
+  .image {
+    width: 600px;
+    height: 600px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .detail {
+    flex: 1;
+    border: 1px solid #dbdbdb;
+    border-left: none;
+
+    & > button {
+      margin: 0 16px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 72px;
+    padding: 16px;
+    border-bottom: 1px solid #efefef;
+
+    a {
+      font-size: 14px;
+      font-weight: 600;
+      color: #262626;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    a:nth-child(2) {
+      margin-left: 10px;
+    }
+    button {
+      margin-left: auto;
+    }
+  }
+
+  .description {
+    display: flex;
+    width: 100%;
+    height: 72px;
+    padding: 16px;
+
+    div {
+      margin-left: 10px;
+      a {
+        font-size: 14px;
+        font-weight: 600;
+        color: #262626;
+        margin-right: 5px;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      p {
+        display: inline-block;
+        font-size: 14px;
+      }
+      span {
+        display: block;
+        font-size: 12px;
+        font-weight: 400;
+        color: #8e8e8e;
+        margin-top: 7px;
+      }
+    }
+  }
+
+  .comments {
+    min-height: 323px;
+    max-height: 323px;
+    overflow-y: auto;
+    div {
+      display: flex;
+      width: 100%;
+      padding: 10px 16px;
+      & > a {
+        margin-top: 15px;
+      }
+      div {
+        display: block;
+        a {
+          font-size: 14px;
+          font-weight: 600;
+          color: #262626;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .actions {
+    border-top: 1px solid #efefef;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 16px;
+
+    div {
+      display: flex;
+      gap: 16px;
+    }
+  }
+
+  .comment {
+    margin-top: 10px;
+    display: flex;
+    height: 55px;
+    border-top: 1px solid #efefef;
+    input {
+      padding: 0 16px;
+      flex: 1;
+    }
+    button {
+      padding: 0 16px;
+      font-weight: 600;
+      color: #0095f6;
+    }
+  }
+`;

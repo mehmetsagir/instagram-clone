@@ -1,17 +1,17 @@
 import Link from "next/link";
 
-import Avatar from "@components/Avatar";
-import Button from "@components/Button";
-import styles from "@modules/Accounts/Edit.module.scss";
+import Avatar from "src/components/Avatar";
+import Button from "src/components/Button";
+import styled from "styled-components";
 
 const edit = () => {
   return (
-    <div className={styles.Container}>
-      <div className={styles.Navbar}>
-        <ul className={styles.Links}>
+    <Container>
+      <div className="navbar">
+        <ul className="links">
           <li>
             <Link href="#">
-              <a className={styles.Active}>Edit Profile</a>
+              <a className="active">Edit Profile</a>
             </Link>
           </li>
           <li>
@@ -69,10 +69,10 @@ const edit = () => {
           </Link>
         </div>
       </div>
-      <div className={styles.Content}>
+      <div className="content">
         <div></div>
         <form>
-          <div className={styles.FormHeader}>
+          <div className="form-header">
             <aside>
               <Avatar size="sm" />
             </aside>
@@ -114,7 +114,7 @@ const edit = () => {
               <textarea></textarea>
             </div>
           </div>
-          <div className={styles.email}>
+          <div className="email">
             <aside>Email</aside>
             <div>
               <b>Personal Information</b>
@@ -161,8 +161,174 @@ const edit = () => {
           </div>
         </form>
       </div>
-    </div>
+    </Container>
   );
 };
+
+const Container = styled.div`
+  min-height: 87vh;
+  border: 1px solid #d8d8d8;
+  display: flex;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  background: #fff;
+
+  .navbar {
+    width: 235px;
+    min-height: 100%;
+    border-right: 1px solid #d8d8d8;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    div {
+      height: 100px;
+      padding: 0 12px;
+      border-top: 1px solid #d8d8d8;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      a {
+        color: #0095f6;
+        margin-top: 7px;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .links {
+    li a {
+      display: block;
+      padding: 16px 16px 16px 30px;
+      border-left: 2px solid transparent;
+      color: #262626;
+      line-height: 20px;
+    }
+    li:last-child a {
+      color: #0095f6;
+      font-weight: 600;
+    }
+  }
+
+  .active {
+    border-color: #000 !important;
+    font-weight: 600;
+  }
+
+  .content {
+    flex: 1;
+    height: 100%;
+
+    form {
+      margin: 25px 0;
+
+      & > div {
+        display: flex;
+        margin-bottom: 16px;
+
+        aside {
+          margin-top: 6px;
+          max-width: 200px;
+          min-width: 200px;
+          padding: 0 32px;
+          text-align: right;
+          color: #262626;
+          font-weight: 600;
+        }
+
+        & > div {
+          padding-right: 110px;
+          width: 100%;
+
+          p {
+            color: #8e8e8e;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 14px;
+            margin-top: 10px;
+          }
+
+          b {
+            color: #8e8e8e;
+            font-size: 14px;
+            font-weight: 600;
+          }
+
+          a {
+            color: #0095f6;
+          }
+
+          label {
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            font-size: 14px;
+            max-width: 270px;
+            &::selection {
+              background: none;
+            }
+            input {
+              max-width: 15px;
+              margin-right: 10px;
+            }
+          }
+
+          input,
+          textarea,
+          select {
+            border: 1px solid #dbdbdb;
+            height: 32px;
+            width: 100%;
+            padding: 0 10px;
+            border-radius: 3px;
+            line-height: 18px;
+          }
+          textarea {
+            padding: 10px;
+            resize: vertical;
+            min-height: 90px;
+          }
+          button {
+            margin-top: 20px;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+
+  .form-header {
+    aside {
+      display: flex;
+      justify-content: flex-end;
+    }
+    div {
+      h1 {
+        font-size: 20px;
+        line-height: 22px;
+        font-weight: 400;
+      }
+      button {
+        font-size: 14px;
+        font-weight: 500;
+        margin: 0 !important;
+        color: #0095f6;
+      }
+    }
+  }
+
+  .email {
+    margin-top: 50px;
+    p {
+      margin-top: 4px !important;
+      margin-bottom: 10px !important;
+    }
+    aside {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      margin-bottom: 6px;
+    }
+  }
+`;
 
 export default edit;
